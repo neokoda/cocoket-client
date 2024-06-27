@@ -39,7 +39,7 @@ export default function Login() {
     setSubmitError(null);
     setSubmitting(true);
     try {
-      const response = await axios.post("http://localhost:5000/api/auth/login", values, {
+      const response = await axios.post("https://cocoket-server-production.up.railway.app/api/auth/login", values, {
         headers: {
           "Content-Type": "application/json",
         },

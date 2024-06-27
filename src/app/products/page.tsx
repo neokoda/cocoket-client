@@ -42,7 +42,7 @@ export default function Products() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/product");
+        const response = await axios.get("https://cocoket-server-production.up.railway.app/api/product");
         setProducts(response.data.body.body);
       } catch (error) {
         console.error("Error fetching products:", error);

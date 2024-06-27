@@ -56,7 +56,7 @@ export default function Payment() {
           return;
         }
 
-        const response = await axios.get(`http://localhost:5000/api/auth/user`, {
+        const response = await axios.get(`https://cocoket-server-production.up.railway.app/api/auth/user`, {
           params: {
             username: username,
           },
@@ -81,7 +81,7 @@ export default function Payment() {
       if (userId && usePoints) {
         console.log("Updating user points...");
         const response = await axios.patch(
-          `http://localhost:5000/api/auth/userPoints`,
+          `https://cocoket-server-production.up.railway.app/api/auth/userPoints`,
           {
             id: parseInt(userId),
             pointsToAdd: "0",

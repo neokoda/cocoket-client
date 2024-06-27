@@ -52,7 +52,7 @@ export default function Register() {
 
     setSubmitting(true);
     try {
-      const response = await axios.post("http://localhost:5000/api/auth/register", values, {
+      const response = await axios.post("https://cocoket-server-production.up.railway.app/api/auth/register", values, {
         headers: {
           "Content-Type": "application/json",
         },

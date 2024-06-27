@@ -60,7 +60,7 @@ const Home = () => {
           return;
         }
 
-        const response = await axios.get('http://localhost:5000/api/auth/login', {
+        const response = await axios.get('https://cocoket-server-production.up.railway.app/api/auth/login', {
           headers: {
             'Authorization': `Bearer ${accessToken}`,
           }
@@ -70,7 +70,7 @@ const Home = () => {
         localStorage.setItem("username", response.data.body.body.username);
 
         const username = response.data.body.body.username;
-        const userResponse = await axios.get(`http://localhost:5000/api/auth/user?username=${username}`);
+        const userResponse = await axios.get(`https://cocoket-server-production.up.railway.app/api/auth/user?username=${username}`);
         setUserData(userResponse.data.body.body);
 
         const storedCart = localStorage.getItem("cart");

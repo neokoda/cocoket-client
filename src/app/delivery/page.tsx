@@ -37,7 +37,7 @@ export default function Delivery() {
           return;
         }
 
-        const response = await axios.get('http://localhost:5000/api/auth/login', {
+        const response = await axios.get('https://cocoket-server-production.up.railway.app/api/auth/login', {
           headers: {
             'Authorization': `Bearer ${accessToken}`,
           }
