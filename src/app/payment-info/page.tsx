@@ -63,19 +63,23 @@ export default function PaymentInfo() {
   }, [expiryDate]);
 
   useEffect(() => {
-    const storedCart = localStorage.getItem("cart");
-    if (storedCart) {
-      const cartItems: CartItem[] = JSON.parse(storedCart);
-      const totalItems = cartItems.reduce((acc, item) => acc + item.quantity, 0);
-      setCartItemCount(totalItems);
+    if (typeof window !== 'undefined') {
+      const storedCart = localStorage.getItem("cart");
+      if (storedCart) {
+        const cartItems: CartItem[] = JSON.parse(storedCart);
+        const totalItems = cartItems.reduce((acc, item) => acc + item.quantity, 0);
+        setCartItemCount(totalItems);
+      }
     }
   }, [])
 
-  const storedCart = localStorage.getItem("selectedItems");
   let subtotal = 0;
-  if (storedCart) {
-    const cartItems: CartItem[] = JSON.parse(storedCart);
-    subtotal = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+  if (typeof window !== 'undefined') {
+    const storedCart = localStorage.getItem("selectedItems");
+    if (storedCart) {
+      const cartItems: CartItem[] = JSON.parse(storedCart);
+      subtotal = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+    }
   }
 
   return (
