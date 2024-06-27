@@ -17,6 +17,7 @@ interface CartItem {
 
 export default function PaymentInfo() {
   const [accountNumber, setAccountNumber] = useState("");
+  const [paymentAmount, setPaymentAmount] = useState("0");
   const [image, setImage] = useState("");
   const [expiryDate, setExpiryDate] = useState<Date | null>(null);
   const [timeLeft, setTimeLeft] = useState<string>("");
@@ -27,10 +28,12 @@ export default function PaymentInfo() {
       const queryParams = new URLSearchParams(window.location.search);
       const storedAccountNumber = queryParams.get("accountNumber") || "";
       const storedImage = queryParams.get("image") || "";
+      const amount = queryParams.get("amount") || "";
       const paymentDateTime = queryParams.get("paymentDateTime");
 
       setAccountNumber(storedAccountNumber);
       setImage(storedImage);
+      setPaymentAmount(amount);
 
       if (paymentDateTime) {
         const paymentDate = new Date(paymentDateTime);
@@ -72,15 +75,6 @@ export default function PaymentInfo() {
       }
     }
   }, [])
-
-  let subtotal = 0;
-  if (typeof window !== 'undefined') {
-    const storedCart = localStorage.getItem("selectedItems");
-    if (storedCart) {
-      const cartItems: CartItem[] = JSON.parse(storedCart);
-      subtotal = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
-    }
-  }
 
   return (
     <main className="flex flex-col h-screen justify-center items-center">
@@ -133,7 +127,7 @@ export default function PaymentInfo() {
           <div className="flex flex-row justify-between items-center text-sm bg-background p-4">
             <div>
               <h2>Total Tagihan</h2>
-              <h1 className="font-bold">Rp {subtotal + 10000}</h1>
+              <h1 className="font-bold">Rp {paymentAmount}</h1>
             </div>
             <h1 className="font-bold text-cckGreen">Lihat Detail</h1>
           </div>

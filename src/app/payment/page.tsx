@@ -119,6 +119,7 @@ export default function Payment() {
         bankName: selectedBankInfo?.name || "",
         accountNumber: selectedBankInfo?.accountNumber || "",
         image: selectedBankInfo?.image || "",
+        amount: (subtotal + 10000 - (usePoints ? userData.points : 0)).toString(),
         paymentDateTime: new Date().toISOString(),
       });
   
@@ -145,7 +146,7 @@ export default function Payment() {
                 className="bg-background rounded-full py-3 px-2 shadow-sm shadow-gray-700 hover:bg-gray-200 transition-all"
               />
             </Link>
-            <h1 className="text-lg font-bold">Pengiriman</h1>
+            <h1 className="text-lg font-bold">Pembayaran</h1>
           </div>
           <div className="flex flex-row items-center space-x-3">
             <Image src="/images/menu.svg" alt="Menu" height={16} width={16} className="cursor-pointer"/>
