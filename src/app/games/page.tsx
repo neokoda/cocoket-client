@@ -7,7 +7,7 @@ import Navbar from "@/components/ui/navbar";
 import Webcam from 'react-webcam';
 import GoogleMapDisplay from '@/components/ui/googleMapDisplay';
 
-export default function Pickup() {
+export default function Games() {
   const webcamRef = useRef<Webcam>(null);
   const [capturedImage, setCapturedImage] = useState<string | null>(null);
 
@@ -19,6 +19,10 @@ export default function Pickup() {
     const imageSrc = webcamRef.current?.getScreenshot() || null;
     handleCapture(imageSrc);
   }, [webcamRef, handleCapture]);
+
+  const videoConstraints = {
+    facingMode: "environment"
+  };
 
   const containerStyle = {
     width: "130px",
@@ -33,6 +37,7 @@ export default function Pickup() {
           audio={false}
           ref={webcamRef}
           screenshotFormat="image/jpeg"
+          videoConstraints={videoConstraints}
           className="absolute top-0 left-0 w-full h-full object-cover z-0"
         />
         
