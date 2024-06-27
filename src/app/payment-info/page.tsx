@@ -83,7 +83,7 @@ export default function PaymentInfo() {
   }
 
   return (
-    <main className="flex flex-col h-screen justify-center items-center pt-10">
+    <main className="flex flex-col h-screen justify-center items-center">
       <div className="flex flex-row justify-between items-center px-6 py-4">
         <div className="flex flex-row items-center space-x-3">
           <Link href="../.">
@@ -110,7 +110,7 @@ export default function PaymentInfo() {
         </div>
       </div>
 
-      <div className="relative max-w-[500px] w-screen h-screen font-montserrat text-black text-left text-sm flex flex-col bg-gray-200 space-y-[1px] shadow-custom-inset rounded-t-[35px] transition-all overflow-y-auto">
+      <div className="relative max-w-[500px] w-screen font-montserrat text-black text-left text-sm flex flex-col bg-gray-200 space-y-[1px] shadow-custom-inset rounded-[35px] transition-all overflow-y-auto">
         <div className="flex flex-row justify-between items-center py-3 bg-background px-8">
           <div className="font-montserrat">
             <h1 className="text-sm font-bold">Bayar Sebelum</h1>
@@ -165,7 +165,7 @@ export default function PaymentInfo() {
         </div>
 
         
-        <div className="flex flex-col justify-center h-full bg-background px-4 overflow-x-scroll">
+        <div className="flex flex-col justify-center h-full bg-background px-4 py-2 overflow-x-scroll overflow-y-scroll">
           <h1 className="pb-4 font-bold text-sm">Berita Harian</h1>
           <div className="flex flex-row space-x-6">
             <ArticleCard title="Life Of Tree" content="Kelapa merupakan tanaman multimanfaat. Di beberapa negara, kelapa juga sering disebut..." link="https://www.tribunnews.com/metropolitan/2021/05/20/kepala-perpustakaan-nasional-kelapa-merupakan-tanaman-multimanfaat"/>

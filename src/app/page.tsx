@@ -158,6 +158,7 @@ const Home = () => {
           <Image src="/images/brickIcon.png" alt="Brick Icon" height={37} width={37} />
           <h1>Beli Briket</h1>
         </Link>
+        <div className="h-[70px]"></div>
       </main>
 
       <Navbar></Navbar>

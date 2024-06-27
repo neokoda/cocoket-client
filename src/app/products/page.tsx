@@ -115,10 +115,11 @@ export default function Products() {
                 numOfReviewers={product.num_reviews}
                 imagePath={product.image_path}
                 store={product.Store.name}
-                updateCartItemCount={updateCartItemCount} // Pass the function to update cart item count
+                updateCartItemCount={updateCartItemCount}
               />
             ))}
         </div>
+        <div className="h-[100px]"></div>
       </main>
       <Navbar />
     </>
