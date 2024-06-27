@@ -2,6 +2,7 @@ import { Doughnut } from "react-chartjs-2";
 import { Chart, CategoryScale, LinearScale, PieController, ArcElement, Tooltip, Legend } from "chart.js";
 import ChartDataLabels from "chartjs-plugin-datalabels";
 
+// Register Chart.js components
 Chart.register(CategoryScale, LinearScale, PieController, ArcElement, Tooltip, Legend);
 Chart.register(ChartDataLabels);
 
@@ -55,12 +56,12 @@ const CircularChart: React.FC<CircularChartProps> = ({ data, dataView, totalValu
         formatter: (value: any, context: any) => {
           return `${context.chart.data.labels[context.dataIndex]}`;
         },
-        align: "end",
-        anchor: "end",
+        align: "end" as "end",  // Specify align as "end"
+        anchor: "end" as "end", // Specify anchor as "end"
         offset: 1,
       },
     },
-    cutout: "80%",
+    cutout: "80%" as "80%", // Specify cutout as "80%"
   };
 
   const drawLines = {
